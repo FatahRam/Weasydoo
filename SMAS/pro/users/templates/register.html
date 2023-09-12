@@ -1,0 +1,58 @@
+<link rel="stylesheet" href="static/styles.css">
+{% include 'navbar.html' %}
+<form action="{% url 'register'%}" method="POST">
+    {% csrf_token %}
+    <div>
+    
+      {% if  error%}
+          {{message}}
+      {% endif %}
+          
+  </div>
+    <!-- 2 column grid layout with text inputs for the first and last names -->
+    <div class="row mb-4">
+      <div class="col">
+        <div class="form-outline">
+          <input type="text" id="form3Example1" class="form-control" name="fname" required/>
+          <label class="form-label" for="form3Example1">First name</label>
+        </div>
+      </div>
+      <div class="col">
+        <div class="form-outline">
+          <input type="text" id="form3Example2" class="form-control" name="lname" required/>
+          <label class="form-label" for="form3Example2">Last name</label>
+        </div>
+      </div>
+      <div class="col">
+        <div class="form-outline">
+          <input type="text" id="form3Example2" class="form-control" name="uname" required/>
+          <label class="form-label" for="form3Example2">identifiant</label>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Email input -->
+    <div class="form-outline mb-4">
+      <input type="email" id="form3Example3" class="form-control" name="email" required/>
+      <label class="form-label" for="form3Example3">Email address</label>
+    </div>
+  
+    <!-- Password input -->
+    <div class="form-outline mb-4">
+      <input type="password" id="form3Example4" class="form-control" name="password" required/>
+      <label class="form-label" for="form3Example4">Password</label>
+    </div>
+
+    <!-- Repassword -->
+    <div class="form-outline mb-4">
+        <input type="password" id="form3Example4" class="form-control" name="repassword" required/>
+        <label class="form-label" for="form3Example4">Repassword</label>
+      </div>
+  
+    
+  
+    <!-- Submit button -->
+    <button type="submit" class="btn btn-primary btn-block mb-4">Sign up</button>
+  
+    <!-- Register buttons -->
+  </form>
